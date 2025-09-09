@@ -5,9 +5,20 @@
 
 set -e
 
-BUILD_DIR="build"
-BIN_DIR="$BUILD_DIR/bin"
-LIB_DIR="$BUILD_DIR/lib"
+# Check if we have the new build structure or old structure
+if [ -d "build/bin" ]; then
+    BUILD_DIR="build"
+    BIN_DIR="$BUILD_DIR/bin"
+    LIB_DIR="$BUILD_DIR/lib"
+elif [ -d "bin" ]; then
+    BUILD_DIR="."
+    BIN_DIR="bin"
+    LIB_DIR="lib"
+else
+    BUILD_DIR="build"
+    BIN_DIR="$BUILD_DIR/bin"
+    LIB_DIR="$BUILD_DIR/lib"
+fi
 
 # Colors for output
 RED='\033[0;31m'
