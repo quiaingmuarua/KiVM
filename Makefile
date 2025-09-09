@@ -218,6 +218,71 @@ test-native-image/fast:
 .PHONY : test-native-image/fast
 
 #=============================================================================
+# Target rules for targets named test-classloader
+
+# Build rule for target.
+test-classloader: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-classloader
+.PHONY : test-classloader
+
+# fast build rule for target.
+test-classloader/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-classloader.dir/build.make CMakeFiles/test-classloader.dir/build
+.PHONY : test-classloader/fast
+
+#=============================================================================
+# Target rules for targets named test-memory
+
+# Build rule for target.
+test-memory: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-memory
+.PHONY : test-memory
+
+# fast build rule for target.
+test-memory/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-memory.dir/build.make CMakeFiles/test-memory.dir/build
+.PHONY : test-memory/fast
+
+#=============================================================================
+# Target rules for targets named test-string
+
+# Build rule for target.
+test-string: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-string
+.PHONY : test-string
+
+# fast build rule for target.
+test-string/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-string.dir/build.make CMakeFiles/test-string.dir/build
+.PHONY : test-string/fast
+
+#=============================================================================
+# Target rules for targets named test-oop
+
+# Build rule for target.
+test-oop: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-oop
+.PHONY : test-oop
+
+# fast build rule for target.
+test-oop/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-oop.dir/build.make CMakeFiles/test-oop.dir/build
+.PHONY : test-oop/fast
+
+#=============================================================================
+# Target rules for targets named test-java-programs
+
+# Build rule for target.
+test-java-programs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-java-programs
+.PHONY : test-java-programs
+
+# fast build rule for target.
+test-java-programs/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-java-programs.dir/build.make CMakeFiles/test-java-programs.dir/build
+.PHONY : test-java-programs/fast
+
+#=============================================================================
 # Target rules for targets named bench-allocation
 
 # Build rule for target.
@@ -2235,6 +2300,30 @@ src/kivm/runtime/stack.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kivm.dir/build.make CMakeFiles/kivm.dir/src/kivm/runtime/stack.cpp.s
 .PHONY : src/kivm/runtime/stack.cpp.s
 
+src/kivm/test/testFramework.o: src/kivm/test/testFramework.cpp.o
+.PHONY : src/kivm/test/testFramework.o
+
+# target to build an object file
+src/kivm/test/testFramework.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kivm.dir/build.make CMakeFiles/kivm.dir/src/kivm/test/testFramework.cpp.o
+.PHONY : src/kivm/test/testFramework.cpp.o
+
+src/kivm/test/testFramework.i: src/kivm/test/testFramework.cpp.i
+.PHONY : src/kivm/test/testFramework.i
+
+# target to preprocess a source file
+src/kivm/test/testFramework.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kivm.dir/build.make CMakeFiles/kivm.dir/src/kivm/test/testFramework.cpp.i
+.PHONY : src/kivm/test/testFramework.cpp.i
+
+src/kivm/test/testFramework.s: src/kivm/test/testFramework.cpp.s
+.PHONY : src/kivm/test/testFramework.s
+
+# target to generate assembly for a file
+src/kivm/test/testFramework.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kivm.dir/build.make CMakeFiles/kivm.dir/src/kivm/test/testFramework.cpp.s
+.PHONY : src/kivm/test/testFramework.cpp.s
+
 src/shared/filesystem.o: src/shared/filesystem.cpp.o
 .PHONY : src/shared/filesystem.o
 
@@ -2523,6 +2612,30 @@ tests/test-args-parser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-args-parser.dir/build.make CMakeFiles/test-args-parser.dir/tests/test-args-parser.cpp.s
 .PHONY : tests/test-args-parser.cpp.s
 
+tests/test-classloader.o: tests/test-classloader.cpp.o
+.PHONY : tests/test-classloader.o
+
+# target to build an object file
+tests/test-classloader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-classloader.dir/build.make CMakeFiles/test-classloader.dir/tests/test-classloader.cpp.o
+.PHONY : tests/test-classloader.cpp.o
+
+tests/test-classloader.i: tests/test-classloader.cpp.i
+.PHONY : tests/test-classloader.i
+
+# target to preprocess a source file
+tests/test-classloader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-classloader.dir/build.make CMakeFiles/test-classloader.dir/tests/test-classloader.cpp.i
+.PHONY : tests/test-classloader.cpp.i
+
+tests/test-classloader.s: tests/test-classloader.cpp.s
+.PHONY : tests/test-classloader.s
+
+# target to generate assembly for a file
+tests/test-classloader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-classloader.dir/build.make CMakeFiles/test-classloader.dir/tests/test-classloader.cpp.s
+.PHONY : tests/test-classloader.cpp.s
+
 tests/test-encode-decode-offset.o: tests/test-encode-decode-offset.cpp.o
 .PHONY : tests/test-encode-decode-offset.o
 
@@ -2546,6 +2659,54 @@ tests/test-encode-decode-offset.s: tests/test-encode-decode-offset.cpp.s
 tests/test-encode-decode-offset.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-encode-decode-offset.dir/build.make CMakeFiles/test-encode-decode-offset.dir/tests/test-encode-decode-offset.cpp.s
 .PHONY : tests/test-encode-decode-offset.cpp.s
+
+tests/test-java-programs.o: tests/test-java-programs.cpp.o
+.PHONY : tests/test-java-programs.o
+
+# target to build an object file
+tests/test-java-programs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-java-programs.dir/build.make CMakeFiles/test-java-programs.dir/tests/test-java-programs.cpp.o
+.PHONY : tests/test-java-programs.cpp.o
+
+tests/test-java-programs.i: tests/test-java-programs.cpp.i
+.PHONY : tests/test-java-programs.i
+
+# target to preprocess a source file
+tests/test-java-programs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-java-programs.dir/build.make CMakeFiles/test-java-programs.dir/tests/test-java-programs.cpp.i
+.PHONY : tests/test-java-programs.cpp.i
+
+tests/test-java-programs.s: tests/test-java-programs.cpp.s
+.PHONY : tests/test-java-programs.s
+
+# target to generate assembly for a file
+tests/test-java-programs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-java-programs.dir/build.make CMakeFiles/test-java-programs.dir/tests/test-java-programs.cpp.s
+.PHONY : tests/test-java-programs.cpp.s
+
+tests/test-memory.o: tests/test-memory.cpp.o
+.PHONY : tests/test-memory.o
+
+# target to build an object file
+tests/test-memory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-memory.dir/build.make CMakeFiles/test-memory.dir/tests/test-memory.cpp.o
+.PHONY : tests/test-memory.cpp.o
+
+tests/test-memory.i: tests/test-memory.cpp.i
+.PHONY : tests/test-memory.i
+
+# target to preprocess a source file
+tests/test-memory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-memory.dir/build.make CMakeFiles/test-memory.dir/tests/test-memory.cpp.i
+.PHONY : tests/test-memory.cpp.i
+
+tests/test-memory.s: tests/test-memory.cpp.s
+.PHONY : tests/test-memory.s
+
+# target to generate assembly for a file
+tests/test-memory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-memory.dir/build.make CMakeFiles/test-memory.dir/tests/test-memory.cpp.s
+.PHONY : tests/test-memory.cpp.s
 
 tests/test-native-image.o: tests/test-native-image.cpp.o
 .PHONY : tests/test-native-image.o
@@ -2595,6 +2756,30 @@ tests/test-oop-size.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-oop-size.dir/build.make CMakeFiles/test-oop-size.dir/tests/test-oop-size.cpp.s
 .PHONY : tests/test-oop-size.cpp.s
 
+tests/test-oop.o: tests/test-oop.cpp.o
+.PHONY : tests/test-oop.o
+
+# target to build an object file
+tests/test-oop.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-oop.dir/build.make CMakeFiles/test-oop.dir/tests/test-oop.cpp.o
+.PHONY : tests/test-oop.cpp.o
+
+tests/test-oop.i: tests/test-oop.cpp.i
+.PHONY : tests/test-oop.i
+
+# target to preprocess a source file
+tests/test-oop.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-oop.dir/build.make CMakeFiles/test-oop.dir/tests/test-oop.cpp.i
+.PHONY : tests/test-oop.cpp.i
+
+tests/test-oop.s: tests/test-oop.cpp.s
+.PHONY : tests/test-oop.s
+
+# target to generate assembly for a file
+tests/test-oop.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-oop.dir/build.make CMakeFiles/test-oop.dir/tests/test-oop.cpp.s
+.PHONY : tests/test-oop.cpp.s
+
 tests/test-stack-and-locals.o: tests/test-stack-and-locals.cpp.o
 .PHONY : tests/test-stack-and-locals.o
 
@@ -2619,6 +2804,30 @@ tests/test-stack-and-locals.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-stack-and-locals.dir/build.make CMakeFiles/test-stack-and-locals.dir/tests/test-stack-and-locals.cpp.s
 .PHONY : tests/test-stack-and-locals.cpp.s
 
+tests/test-string.o: tests/test-string.cpp.o
+.PHONY : tests/test-string.o
+
+# target to build an object file
+tests/test-string.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-string.dir/build.make CMakeFiles/test-string.dir/tests/test-string.cpp.o
+.PHONY : tests/test-string.cpp.o
+
+tests/test-string.i: tests/test-string.cpp.i
+.PHONY : tests/test-string.i
+
+# target to preprocess a source file
+tests/test-string.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-string.dir/build.make CMakeFiles/test-string.dir/tests/test-string.cpp.i
+.PHONY : tests/test-string.cpp.i
+
+tests/test-string.s: tests/test-string.cpp.s
+.PHONY : tests/test-string.s
+
+# target to generate assembly for a file
+tests/test-string.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-string.dir/build.make CMakeFiles/test-string.dir/tests/test-string.cpp.s
+.PHONY : tests/test-string.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2633,10 +2842,15 @@ help:
 	@echo "... java"
 	@echo "... kivm"
 	@echo "... test-args-parser"
+	@echo "... test-classloader"
 	@echo "... test-encode-decode-offset"
+	@echo "... test-java-programs"
+	@echo "... test-memory"
 	@echo "... test-native-image"
+	@echo "... test-oop"
 	@echo "... test-oop-size"
 	@echo "... test-stack-and-locals"
+	@echo "... test-string"
 	@echo "... src/bin/java.o"
 	@echo "... src/bin/java.i"
 	@echo "... src/bin/java.s"
@@ -2886,6 +3100,9 @@ help:
 	@echo "... src/kivm/runtime/stack.o"
 	@echo "... src/kivm/runtime/stack.i"
 	@echo "... src/kivm/runtime/stack.s"
+	@echo "... src/kivm/test/testFramework.o"
+	@echo "... src/kivm/test/testFramework.i"
+	@echo "... src/kivm/test/testFramework.s"
 	@echo "... src/shared/filesystem.o"
 	@echo "... src/shared/filesystem.i"
 	@echo "... src/shared/filesystem.s"
@@ -2922,18 +3139,33 @@ help:
 	@echo "... tests/test-args-parser.o"
 	@echo "... tests/test-args-parser.i"
 	@echo "... tests/test-args-parser.s"
+	@echo "... tests/test-classloader.o"
+	@echo "... tests/test-classloader.i"
+	@echo "... tests/test-classloader.s"
 	@echo "... tests/test-encode-decode-offset.o"
 	@echo "... tests/test-encode-decode-offset.i"
 	@echo "... tests/test-encode-decode-offset.s"
+	@echo "... tests/test-java-programs.o"
+	@echo "... tests/test-java-programs.i"
+	@echo "... tests/test-java-programs.s"
+	@echo "... tests/test-memory.o"
+	@echo "... tests/test-memory.i"
+	@echo "... tests/test-memory.s"
 	@echo "... tests/test-native-image.o"
 	@echo "... tests/test-native-image.i"
 	@echo "... tests/test-native-image.s"
 	@echo "... tests/test-oop-size.o"
 	@echo "... tests/test-oop-size.i"
 	@echo "... tests/test-oop-size.s"
+	@echo "... tests/test-oop.o"
+	@echo "... tests/test-oop.i"
+	@echo "... tests/test-oop.s"
 	@echo "... tests/test-stack-and-locals.o"
 	@echo "... tests/test-stack-and-locals.i"
 	@echo "... tests/test-stack-and-locals.s"
+	@echo "... tests/test-string.o"
+	@echo "... tests/test-string.i"
+	@echo "... tests/test-string.s"
 .PHONY : help
 
 

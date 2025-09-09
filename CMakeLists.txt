@@ -125,6 +125,11 @@ if (IS_THREADED)
     set(KIVM_THREADED 1)
 endif ()
 
+#### Output directories
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+
 #### post configuration
 add_definitions("-DHAVE_CONFIG_H")
 configure_file(${CMAKE_SOURCE_DIR}/cmake/cmake-config.h.in ${CMAKE_BINARY_DIR}/compileTimeConfig.h)
@@ -193,6 +198,7 @@ set(SOURCE_FILES
         include/shared/mmap.h
         include/kivm/native/java_lang_reflect_Constructor.h
         include/kivm/native/java_lang_reflect_Method.h
+        include/kivm/test/testFramework.h
         include/kivm/runtime/vmThread.h
         include/kivm/runtime/threadState.h
         include/kivm/runtime/javaThread.h
@@ -306,7 +312,8 @@ set(SOURCE_FILES
         include/kivm/asm/register.h
         src/kivm/bytecode2/templateTable.cpp
         src/kivm/bytecode2/interpreterMacroAssembler.cpp
-        include/kivm/bytecode2/templateTable.h src/kivm/native/sun_reflect_NativeMethodAccessorImpl.cpp)
+        include/kivm/bytecode2/templateTable.h src/kivm/native/sun_reflect_NativeMethodAccessorImpl.cpp
+        src/kivm/test/testFramework.cpp)
 
 set(KIVM_PLATFORM_SRC
         include/shared/os/common/dl.h
@@ -351,6 +358,13 @@ add_test_target(encode-decode-offset)
 add_test_target(oop-size)
 add_test_target(args-parser)
 add_test_target(native-image)
+
+#### KiVM Component Tests
+add_test_target(classloader)
+add_test_target(memory)
+add_test_target(string)
+add_test_target(oop)
+add_test_target(java-programs)
 
 #### Benchmarks
 add_executable(bench-allocation tests/bench-allocation.cpp)
