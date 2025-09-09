@@ -50,7 +50,6 @@ cmake_install.cmake
 install_manifest.txt
 
 # Build artifacts in root directory (legacy)
-test-*
 bench-*
 java
 libkivm.so
