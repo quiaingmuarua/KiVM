@@ -55,4 +55,9 @@ bench-*
 java
 libkivm.so
 compileTimeConfig.h
+
+# Test output files
+*.log
+core
+core.*
 .cmake

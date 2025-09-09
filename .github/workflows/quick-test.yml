@@ -1,0 +1,54 @@
+name: Quick Test
+
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'include/**'
+      - 'CMakeLists.txt'
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'include/**'
+      - 'CMakeLists.txt'
+
+jobs:
+  quick-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake build-essential libffi-dev libzip-dev zlib1g-dev
+    
+    - name: Quick build test
+      run: |
+        echo "=== Quick Build Test ==="
+        cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+        cmake --build build --parallel $(nproc)
+        echo "✓ Build completed successfully"
+    
+    - name: Quick component tests
+      run: |
+        echo "=== Quick Component Tests ==="
+        cd build
+        export LD_LIBRARY_PATH="./lib:$LD_LIBRARY_PATH"
+        
+        # Run core tests that don't require rt.jar
+        echo "Testing string operations..."
+        ./bin/test-string
+        
+        echo "Testing memory management..."
+        ./bin/test-memory
+        
+        echo "Testing basic unit tests..."
+        ./bin/test-stack-and-locals
+        ./bin/test-oop-size
+        
+        echo "✓ Quick tests completed"
